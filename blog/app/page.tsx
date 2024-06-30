@@ -1,20 +1,15 @@
-import Image from "next/image";
+import getPostMetadata from "../components/getPostMetadata";
+import PostPreview from "../components/PostPreview";
 
-export default function Home() {
+const HomePage = () => {
+  const postMetadata = getPostMetadata();
+  const postPreviews = postMetadata.map((post) => (
+    <PostPreview key={post.slug} {...post} />
+  ));
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-
-      <div>
-        <Image
-          src="/DRGNFLY.png"
-          alt="Next.js Logo"
-          width={180}
-          height={100}
-          priority
-        />
-      </div>
-
-    
-    </main>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{postPreviews}</div>
   );
-}
+};
+
+export default HomePage;
