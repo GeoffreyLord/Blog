@@ -2,72 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Briefing</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            display: flex;
-            gap: 20px;
-        }
-        #map-container {
-            width: 400px;
-            height: 300px;
-            border: 1px solid #ccc;
-        }
-        #map {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        #info-feed {
-            flex: 1;
-            height: 500px;
-            overflow-y: auto;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        h2 {
-            margin-top: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Daily Briefing</h1>
-    <div class="container">
-        <div id="map-container">
-            <iframe id="map" src="https://www.openstreetmap.org/export/embed.html?bbox=-180,-90,180,90&amp;layer=mapnik" title="Interactive World Map"></iframe>
+    <div class="page_name">
+        <h1>Daily Breifing</h1>
+    </div>
+    <!-- Date Navigation -->
+    <div class="date-navigation">
+        <button id="prev-day">◀ Previous</button>
+        <span id="current-date"></span>
+        <button id="next-day">Next ▶</button>
+    </div>
+
+    <!-- Market Data Ticker -->
+    <div class="market-ticker" id="market-ticker">
+        <!-- Scrolling market data will appear here -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- News Feed -->
+        <div class="news-feed" id="news-feed">
+            <h2>Business</h2>
+            <ul>
+                <li>Oil Prices on the Rise: Libya's oil exports are at a near standstill due to political infighting over control of the nation’s central bank. This is causing market jitters and pushing global oil prices up, adding pressure to an already tight energy market as the world anticipates continued disruptions​(
+                    The Cipher Brief).</li>
+                <li>Tech Layoffs Continue: Major tech firms, including some Silicon Valley giants, are continuing rounds of layoffs as they adjust to post-pandemic demand levels. The sector is also seeing a cooling off in venture capital funding as investors become more cautious amid interest rate concerns​(
+                    The Cipher Brief).</li>
+              </ul>
+             <h2>National Security</h2>
+              <ul>
+                  <li>U.S. Consulate Warning in Lebanon: Americans in Lebanon are being urged to leave immediately as Iran promises retaliation for recent Israeli airstrikes, escalating tensions in the region. Iran has vowed to avenge the deaths of leaders from Hamas and Hezbollah​(
+                    The Daily Beast).</li>
+                  <li>North Korea's Bold PR Move: North Korea unveiled images of its secret uranium-enrichment facility, underscoring its nuclear ambitions. The international community is concerned, but with growing support from Russia, North Korea appears confident in evading sanctions​(
+                    POLITICO)​(The Cipher Brief).</li>
+                <li>Russian Information Warfare: The U.S. Justice Department has been active in countering Russian disinformation campaigns. Recently, 32 Russian-controlled domains were seized for spreading fake news as part of an influence campaign targeting the 2023 U.S. election​(
+                    The Cipher Brief).</li>
+                </ul>
+             <h2>Politics</h2>
+                <ul>
+                    <li>Putin’s Threats Met with Indifference: Despite recent aggressive rhetoric from Russian President Vladimir Putin, Western leaders, including Germany's defense minister, have brushed off his threats, signaling a hardened stance against Russia’s ongoing military actions​(
+                        POLITICO
+                        ).</li>
+                    <li>GOP Debates Trump’s Ukraine Stance: Former President Trump’s comments on the Ukraine conflict during the GOP debate have sparked debate within the Republican Party, with some members criticizing his “no-win” perspective on the war. This reflects broader divisions within the party on U.S. involvement in the conflict​(
+                        POLITICO
+                        ).</li>
+                  </ul>
+            
         </div>
-        <div id="info-feed">
-            <!-- ... (rest of the content remains the same) ... -->
+
+        <!-- Map with Current Events -->
+        <div class="map-container">
+            <iframe id="event-map" src="" frameborder="0"></iframe>
         </div>
     </div>
 
-    <script>
-        const briefingInfo = [
-            "Israel and Gaza: Hamas delegation left peace talks in Cairo early",
-            "Venezuela: EU issued condemnation of Pres. Maduro's election theft",
-            "Sudan: Junta leader vowed to 'fight for 100 years'",
-            "Russia: U.S. sanctioned 123 firms for supporting Russia's war in Ukraine",
-            "Ukraine: Massive wave of drone attacks on Kyiv and northwestern Ukraine"
-        ];
-
-        document.getElementById('map').addEventListener('load', function() {
-            this.contentWindow.addEventListener('click', showRandomInfo);
-        });
-
-        function showRandomInfo() {
-            const randomIndex = Math.floor(Math.random() * briefingInfo.length);
-            alert(briefingInfo[randomIndex]);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
