@@ -1,7 +1,9 @@
-# The Era Resilient Efforts: An assessment of the resilient technologies and the efforts that will build the future.
+# The Era Resilient Efforts: 
+**An assessment of the resilient technologies and the efforts that will build the future.**
 
 - By: Geoff Lord
 - Published: JUN 18 2024
+- Link: https://geofflord.substack.com/p/the-era-resilient-efforts
 
 <center><img src="../Assets/2/ERE.png"></center>
 

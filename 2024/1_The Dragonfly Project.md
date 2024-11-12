@@ -1,6 +1,8 @@
-# The Dragonfly Project: An investigation into decoding Multi-Layer-Perceptrons (MLPs)
+# The Dragonfly Project: 
+**An investigation into decoding Multi-Layer-Perceptrons (MLPs)**
 - By: Geoff Lord
 - Published: JUN 13 2024
+- Link: https://geofflord.substack.com/p/thedragonflyproject
 
 <center><img src="../Assets/1/DRGNFLY_LOGO.png"></center>
 
