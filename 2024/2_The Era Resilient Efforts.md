@@ -5,7 +5,7 @@
 - Published: JUN 18 2024
 - Link: https://geofflord.substack.com/p/the-era-resilient-efforts
 
-<center><img src="../Assets/2/ERE.png"></center>
+<center><img src="../Assets/2024/2/ERE.png"></center>
 
 ## Introduction:
 I deeply enjoy thinking about the problems and solutions that will thrust us into the future. A future, mind you, that will not come to be without individuals working relentlessly on contrarian, ideas with strong conviction. But, what this future looks like is not defined by a divine direction. It is an epoch crafted by our expectations, hopes, and dreams. At best, this future can ensure continued prosperity that aligns with the needs of humanity. At worst, it leads to the end of us.

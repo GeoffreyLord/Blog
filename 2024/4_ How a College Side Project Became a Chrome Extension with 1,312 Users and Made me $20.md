@@ -5,7 +5,7 @@
 - Published: AUG 22 2024
 - Link: https://geofflord.substack.com/p/how-a-college-side-project-became
 
-<center><img src="../Assets/4/snip.png"></center>
+<center><img src="../Assets/2024/4/snip.png"></center>
 
 ## Introduction
 In the spring of 2021, I was taking an Introduction to Cybersecurity course in college. The course was fun — most of the time was spent staying current on recent cyber events. We would read articles on new attack vectors or security breaches and engage in discourse with our classmates. Generally, the class was not technical but it did a great job of exposing students to the field of Cybersecurity. Around the same time, I had a part-time engineering job, was a teaching assistant for a former professor, and was trying not to fall behind on my coursework. In short, I was swamped.
@@ -16,7 +16,7 @@ I recognized it was time for a change so, I began looking into summarization alg
 
 ## The Algorithm
 
-<center><img src="../Assets/4/TR.png"></center>
+<center><img src="../Assets/2024/4/TR.png"></center>
 
 Eventually, I came across an algorithm called Text Rank1. The Text Rank algorithm is a graph-based ranking system similar to what was first used by Larry Page and Sergey Brin when creating the Google search engine. It works by creating a fully interconnected graph where each sentence is represented by a node. Then all nodes are compared with each other to identify similarities between each sentence. In short, the algorithm identifies the sentences that show the highest levels of similarity to all of the other sentences in the piece. Afterwards, sentences with low similarity scores can be dropped leaving a shortened form of the article.
 
@@ -35,15 +35,15 @@ As a user of a handful of Chrome extensions, I generally like the ecosystem and 
 
 The architecture for this application went through multiple iterations over the years but, the first version was comprised of a simple UI with a text box for input text and a summarization API that was running on a Raspberry Pi in my college apartment (+1 for reliability).
 
-<center><img src="../Assets/4/V1.png"></center>
+<center><img src="../Assets/2024/4/V1.png"></center>
 
 Eventually, I figured it would be nice to deploy the backend to some more acceptable infrastructure. I found a Dell Poweredge R510 on Craigslist, loaded a hypervisor, and deployed the backend on a Ubuntu VM. Unfortunately, it didn’t take long for me to realize that my apartment’s AC could not keep up with the heat produced by this archaic server. Selecting to use on-prem hardware was a questionable decision but a fun path to take regardless. After a hot summer week in my overheating apartment, I moved the backend to AWS which was probably what I should have done in the first place.
 
-<center><img src="../Assets/4/PE.png"></center>
+<center><img src="../Assets/2024/4/PE.png"></center>
 
 Around the same time, I continued improving the application by altering the UX. I wanted to get to a point where the application required a single click to get a summarized version of any article. This improvement required the creation of an article-parsing script that could look at just about any web page and delineate the article contents from adverts, image captions, and headlines for other articles. Without question, the most challenging component of Snip was creating this parsing feature. At times, the tool still picks up captions on images and the occasional headline of another article. It’s good but certainly not great.
 
-<center><img src="../Assets/4/UI.png"></center>
+<center><img src="../Assets/2024/4/UI.png"></center>
 
 In addition to the more reliable backend and UX improvements, I cleaned up the UI and added some features like a minimize button and text to audio. The application is simple, but its simplicity was a conscious design objective. My end goal was to reach a point where the application was so seamless users didn’t even know they were using it. Ideally, this would have manifested itself as an application that altered the actual text on the web page instead of a popup window.
 
@@ -54,7 +54,7 @@ At this point, I started thinking big. The premise behind the application was si
 
 By now I felt the value proposition was clear and I had a decent MVP. I suspected my beachhead market would give me a strategic advantage to turn this Chrome extension into something larger. As someone who has never been the fastest reader in the room, I recognized the value a tool like Snip could provide for dyslexic students, a market that is surprisingly large whilst being undersupported. Reading rulers and audiobooks can only get you so far if what you are reading is full of intermittent distractions that provide little value to the piece. I saw the high school or college version of myself as the perfect user to help refine the product.
 
-<center><img src="../Assets/4/poster.png"></center>
+<center><img src="../Assets/2024/4/poster.png"></center>
 
 I put some posters up around school and Snip started gaining users but the growth was slow and engagement was subpar. There was a self-imposed expectation that my posters and a few emails would get me a strong enough user base to conduct A/B tests, gather feedback, and organically achieve growth. In hindsight, this expectation was illogical. I put almost no time into user acquisition, didn’t spend a single cent on marketing, and hadn’t even talked with a user. Nevertheless, the lack of initial growth made me question if the project was worth further development.
 
@@ -63,7 +63,7 @@ Over the next year, I would intermittently check the user growth but for the mos
 ## User Growth
 Eventually, in the late summer of 2023, I spent some time one weekend tuning the sentence ranking algorithm and making minor updates to the UI. I added a Buy Me a Coffee link to see if anyone would donate to the cause and made a post on Reddit sharing the application. By this time I saw Snip as a fun application I once made and figured if it helped even one person it would be considered a win.
 
-<center><img src="../Assets/4/Users.png"></center>
+<center><img src="../Assets/2024/4/Users.png"></center>
 
 To my surprise, the Reddit post gained some traction and users started to show up. In March of 2024, Snip hit its peak with a total of 1312 weekly users. While I don’t have any demographic information on the users the graph clearly illustrates a student demographic. So, I guess I am the developer of an occasionally used educational technology application.
 

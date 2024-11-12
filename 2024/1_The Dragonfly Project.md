@@ -4,7 +4,7 @@
 - Published: JUN 13 2024
 - Link: https://geofflord.substack.com/p/thedragonflyproject
 
-<center><img src="../Assets/1/DRGNFLY_LOGO.png"></center>
+<center><img src="../Assets/2024/1/DRGNFLY_LOGO.png"></center>
 
 ## Introduction:
 Recently, I began to wonder if Neural Networks, specifically Multi-Layer Perceptrons (MLPs), are all they are chalked up to be. I’d heard people describe MLPs as universal function approximators but questioned the notion of approximating functions if we could just use them. I figured, if nothing else, they may be a useful tool for the discovery of underlying equations in experimental data. So, in an effort to settle my curiosity, I set out on an adventure to decode model parameters and discover what makes the MLP special. I called it the Dragonfly project.1
@@ -18,17 +18,17 @@ I am making this post to begin a dialog on how the MLP architecture meshes with 
 
 When I began this project the only thing I knew about neural networks was that they used a series of weighted sums that deterministically calculate a result. So, my first step was to understand their structure.
 
-<center><img src="../Assets/1/MLP.png"></center>
+<center><img src="../Assets/2024/1/MLP.png"></center>
 
 Frequently, neural networks are presented like the graphic above. But, at a high level, these models can simply be thought of as a series of interconnected pipes. You pour water down nodes X1, X2, and X3 and you get something out at the Y node. When someone says they are training a neural network all they are really doing is changing the size of these pipes to make the water flow faster or slower depending on what they want.
 
 To gain a grasp of what is mathematically occurring with this pipe analogy let’s look at what happens between the three input nodes (X1, X2, and X3) and node A11.
 
-<center><img src="../Assets/1/percep.png"></center>
+<center><img src="../Assets/2024/1/percep.png"></center>
 
 The figure above, Figure 2, is a graphic of a perceptron which is the most simplified component of an MLP. This can be thought of as a function that takes in three inputs and outputs a single value. Mathematically, we can write this perception as the following function:
 
-<center><img src="../Assets/1/EQ1.png"></center>
+<center><img src="../Assets/2024/1/EQ1.png"></center>
 
 
 All that occurs here is the following:
@@ -43,7 +43,7 @@ All that occurs here is the following:
 
 From here, the same equation can be applied to solve for every other node until you arrive at your final value of Y. Through the model training process we are modifying the weight (i.e. W[111]) and bias values (i.e. B[11]) so our neural network aligns with our expected result.
 
-<center><img src="../Assets/1/EQ2.png"></center>
+<center><img src="../Assets/2024/1/EQ2.png"></center>
 
 This entire process can be written as the series of equations above. I glossed over some nuances of the MLP model architecture. But, for the sake of this post, that’s the gist.
 
@@ -94,7 +94,7 @@ Within our natural network exist 41 parameters that together can somehow compute
 
 Here, take a look for yourself:
 
-<center><img src="../Assets/1/params.png"></center>
+<center><img src="../Assets/2024/1/params.png"></center>
 
 However, the equation identified by the MLP, which uses these weight and bias values, can be seen as a different form of the equation for circumference. Meaning, we could take parameters from Figure 4, plug them into the equations in Figure 3, and have an equation that exhibits near equality with the circumference equation. Therefore, these weight and bias values harbor the potential to unveil the circumference formula but also to allude to a deeper revelation: the constant π.
 
@@ -105,10 +105,10 @@ Fortunately, it turns out that every MLP can be rewritten as a single perception
 
 So, in an instance where our diameter == 1, circumference == 0, and rim thickness == 0, our neural network can be fully approximated as the following equation.
 
-<center><img src="../Assets/1/EQ3.png"></center>
+<center><img src="../Assets/2024/1/EQ3.png"></center>
 This process can be replicated for every other input value in our dataset to develop a granular view of how our neural network is calculating circumference. As a result, we get a model profile that looks like this:
 
-<center><img src="../Assets/1/Plot1.png"></center>
+<center><img src="../Assets/2024/1/Plot1.png"></center>
 
 From here, we can start to draw some conclusions about how circumference can be calculated.
 
@@ -118,18 +118,18 @@ Second, we can see that X1 (Diameter) is being multiplied by a constant value ar
 
 Our model will converge to the equation:
 
-<center><img src="../Assets/1/EQ4.png"></center>
+<center><img src="../Assets/2024/1/EQ4.png"></center>
 
 Which just so happens to look a lot like:
 
-<center><img src="../Assets/1/EQ5.png"></center>
+<center><img src="../Assets/2024/1/EQ5.png"></center>
 
 In the unlikely scenario where we didn't know the equation for circumference but had access to MLPs, we could have used them to identify π and derive the circumference equation.
 
 ## Fingerprinting:
 At this point, I became curious to learn how other sorts of functions could be profiled so I set out to train more models and take a look.
 
-<center><img src="../Assets/1/Plot2.png"></center>
+<center><img src="../Assets/2024/1/Plot2.png"></center>
 
 In a not-so-surprising manner, it turned out that each function type had a clear and distinguishable profile that could be used to map to the original equation. Furthermore, this profiling could be done without looking at the input data but instead at the model’s parameters.
 
@@ -150,7 +150,7 @@ Around this time, OpenAI had just released its first set of videos from Sora, tw
 
 But, I quickly realized that I had almost no knowledge of diffusion models, and quite frankly still don't, so figured it was best to start elsewhere.
 
-<center><img src="../Assets/1/sora.png"></center>
+<center><img src="../Assets/2024/1/sora.png"></center>
 
 Over a few months, I ventured down many paths and attempted to train multiple models with pitiful results. My process was not very structured, but I selected use cases based on the following criteria: (1) the availability of easily accessible training data, and (2) the absence of a known equation describing the input data.
 
@@ -171,7 +171,7 @@ I was curious to know if there were some patterns I could identify through the m
 
 The training took a while and the model was overfit as hell but it provided me with an insight I should have reached months ago. All I needed to see was the model profile.
 
-<center><img src="../Assets/1/Plot3.png"></center>
+<center><img src="../Assets/2024/1/Plot3.png"></center>
 
 
 After looking at Figure 8, I realized an MLP will not be able to approximate any mathematical operation where the input variables interact through anything other than addition/subtraction unless the model memorizes the input data.
@@ -183,7 +183,7 @@ As of today, I feel there is value in treating an MLP as a single perceptron for
 
 As for how this model architecture meshes with the natural world, I believe there is much to be desired. Take Newton’s law of universal gravitation for example.
 
-<center><img src="../Assets/1/EQ6.png"></center>
+<center><img src="../Assets/2024/1/EQ6.png"></center>
 
 
 You would be hard-pressed to get an MLP to approximate this function without only overfitting. Functions like these frequently present themselves in the natural world and I suspect our model architectures should accommodate them.
